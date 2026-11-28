@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5f2ec">
+<title>KEYBOARD® — A Personal Playground</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+:root{--paper:#f5f2ec;--ink:#191919;--blue:#4e65f5;--pink:#ff6e9e;--lime:#d5ff45;--line:#d9d5cc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background-color:var(--paper);color:var(--ink);font-family:'Space Grotesk','Noto Sans SC',sans-serif;background-image:linear-gradient(#e9e5dc 1px,transparent 1px),linear-gradient(90deg,#e9e5dc 1px,transparent 1px);background-size:28px 28px}
+a{color:inherit;text-decoration:none}.wrap{width:min(1240px,92%);margin:auto}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--ink);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.08em}
+.brand{font-weight:700;font-size:22px;letter-spacing:-.08em}.brand span{color:var(--blue)}.navlinks{display:flex;gap:28px}.navlinks a:hover{color:var(--blue)}
+.hero{min-height:660px;padding:54px 0 42px;position:relative;overflow:hidden}
+.eyebrow,.tiny{font:11px 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+h1{font-size:clamp(76px,13vw,174px);line-height:.78;letter-spacing:-.105em;margin:45px 0 30px;font-weight:700;position:relative;z-index:2}
+h1 .outline{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.intro{max-width:340px;font-size:15px;line-height:1.8;margin:0 0 26px}
+.sticker{display:inline-block;background:var(--lime);padding:10px 14px;transform:rotate(-4deg);font:700 12px 'DM Mono',monospace;border:1px solid var(--ink)}
+.visual{height:470px;position:relative}
+.poster{position:absolute;inset:18px 8% 18px 8%;background:#e9a9bd;border:1px solid var(--ink);transform:rotate(3deg);overflow:hidden;box-shadow:10px 10px 0 var(--ink)}
+.poster:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 68% 35%,#f6d9d7 0 13%,transparent 13.5%),linear-gradient(135deg,transparent 0 42%,#e75e83 42% 62%,transparent 62%),repeating-linear-gradient(0deg,transparent 0 17px,#19191918 18px 19px)}
+.poster-word{position:absolute;top:20px;left:18px;font-size:clamp(35px,5vw,65px);line-height:.82;letter-spacing:-.09em;font-weight:700;z-index:1}
+.poster-sub{position:absolute;bottom:18px;left:18px;font:11px 'DM Mono',monospace;z-index:1}
+.orbit{position:absolute;width:116px;height:116px;border:1px solid var(--ink);border-radius:50%;right:-2px;top:0;display:grid;place-items:center;background:var(--lime);font:11px 'DM Mono',monospace;transform:rotate(12deg);z-index:3}
+.star{position:absolute;font-size:70px;color:var(--blue);right:4%;bottom:2%;transform:rotate(14deg);z-index:3}
+.ticker{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:13px 0;overflow:hidden;white-space:nowrap;font:12px 'DM Mono',monospace;letter-spacing:.08em;background:var(--lime)}
+.ticker span{display:inline-block;padding-left:30px}
+section{padding:92px 0}.section-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:13px;margin-bottom:30px}.section-head h2{font-size:clamp(32px,6vw,64px);letter-spacing:-.07em;margin:0}.section-head small{font:11px 'DM Mono',monospace}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}.about-big{font-size:clamp(34px,5vw,62px);line-height:1.05;letter-spacing:-.07em;font-weight:600}.about-big em{font-style:normal;color:var(--blue)}.about-copy{font-size:16px;line-height:2;max-width:500px;align-self:end}
+.cards{display:grid;grid-template-columns:1.05fr .95fr;gap:20px}.card{min-height:310px;border:1px solid var(--ink);padding:22px;position:relative;overflow:hidden;transition:transform .25s}.card:hover{transform:translateY(-7px) rotate(-.5deg)}.card.blue{background:var(--blue);color:white}.card.pink{background:var(--pink)}.card.lime{background:var(--lime)}.card.dark{background:var(--ink);color:var(--paper)}.card .num{font:11px 'DM Mono',monospace}.card h3{font-size:clamp(32px,5vw,58px);line-height:.9;letter-spacing:-.08em;margin:80px 0 10px}.card p{font-size:13px;max-width:250px;line-height:1.6}.arrow{position:absolute;right:22px;top:18px;font-size:28px}
+.note{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.note-art{min-height:290px;background:#d7d0c5;border:1px solid var(--ink);position:relative;overflow:hidden;display:grid;place-items:center}.note-art:before,.note-art:after{content:"";position:absolute;width:220px;height:220px;border:2px solid var(--ink);border-radius:50%}.note-art:after{width:150px;height:150px;background:var(--pink);border:0;mix-blend-mode:multiply}.note-art b{z-index:1;font-size:42px;letter-spacing:-.1em;transform:rotate(-12deg)}
+.contact{background:var(--ink);color:var(--paper);padding:70px 0;margin-top:30px}.contact h2{font-size:clamp(58px,12vw,140px);line-height:.8;letter-spacing:-.1em;margin:30px 0}.contact h2 span{color:var(--lime)}.contact p{font-size:14px;line-height:1.8;color:#c8c4bc}.contact a.mail{display:inline-block;border:1px solid var(--lime);color:var(--lime);padding:12px 18px;font:12px 'DM Mono',monospace;margin-top:18px}
+footer{padding:20px 0;display:flex;justify-content:space-between;font:10px 'DM Mono',monospace}
+@media(max-width:760px){.navlinks{gap:12px}.navlinks a{font-size:9px}.hero-grid,.about-grid,.cards,.note{grid-template-columns:1fr}.hero{padding-top:38px}.visual{height:340px}.poster{inset:12px 10%}.orbit{right:2%}.section{padding:65px 0}.card{min-height:250px}.card h3{margin-top:55px}footer{gap:12px;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="brand" href="#">键盘<span>®</span> / KEYBOARD</a><div class="navlinks"><a href="#about">ABOUT</a><a href="#works">WORKS</a><a href="#notes">NOTES</a><a href="#contact">CONTACT ↗</a></div></nav>
+<header class="hero">
+<div class="eyebrow">INDEPENDENT SPACE · VOL. 001 · 2026</div>
+<div class="hero-grid">
+<div><h1>MAKE<br><span class="outline">SOME</span><br>NOISE.</h1><p class="intro">一个还在生长的个人空间。收集灵感，尝试创作，把脑海里的奇妙想法一点点变成现实。</p><span class="sticker">CURIOUS BY NATURE ✳</span></div>
+<div class="visual"><div class="poster"><div class="poster-word">IDEAS<br>IN<br>PROGRESS</div><div class="poster-sub">A PERSONAL PLAYGROUND<br>DESIGN · LIFE · EXPERIMENT</div></div><div class="orbit">SCROLL<br>TO EXPLORE ↓</div><div class="star">✳</div></div>
+</div>
+</header>
+</div>
+<div class="ticker"><span>✳ THINK DIFFERENT　✳ MAKE THINGS　✳ STAY CURIOUS　✳ KEEP EXPLORING　✳ THINK DIFFERENT　✳ MAKE THINGS　✳ STAY CURIOUS　✳</span></div>
+<main class="wrap">
+<section id="about"><div class="section-head"><h2>WHO'S HERE?</h2><small>01 / ABOUT</small></div><div class="about-grid"><div class="about-big">不急着成为<br>谁的标准答案。<br><em>先做点有趣的事。</em></div><div class="about-copy">你好，欢迎来到 KEYBOARD。这里是一个持续更新的个人实验空间。现在还没有很多作品，也没有固定答案；这里会慢慢装进我的观察、灵感、学习过程，以及那些想亲手实现的点子。</div></div></section>
+<section id="works"><div class="section-head"><h2>SELECTED PLAYGROUND</h2><small>02 / WORKS & IDEAS</small></div><div class="cards">
+<article class="card blue"><span class="num">01 / DIGITAL</span><span class="arrow">↗</span><h3>WEB<br>EXPERIMENT</h3><p>从这个网站开始，学习用数字工具表达想法。</p></article>
+<article class="card pink"><span class="num">02 / VISUAL</span><span class="arrow">↗</span><h3>VISUAL<br>MOODBOARD</h3><p>喜欢的图像、海报、色彩和视觉灵感收集。</p></article>
+<article class="card lime"><span class="num">03 / LEARNING</span><span class="arrow">↗</span><h3>LEARNING<br>LOG</h3><p>记录正在学习的技能，以及每一次小小的进步。</p></article>
+<article class="card dark"><span class="num">04 / NEXT</span><span class="arrow">↗</span><h3>TO BE<br>CONTINUED</h3><p>还没发生的事情，也值得期待。</p></article>
+</div></section>
+<section id="notes"><div class="section-head"><h2>OPEN TAB</h2><small>03 / CURRENTLY</small></div><div class="note"><div class="note-art"><b>IN<br>PROCESS.</b></div><div><div class="eyebrow">A NOTE TO MYSELF</div><div class="about-big" style="margin:18px 0">保持好奇，<br><em style="color:var(--pink)">持续动手。</em></div><p class="about-copy">这个角落留给还在路上的想法。以后可以放学习笔记、实验过程、喜欢的唱片与图片，也可以记录一个项目从零到一的过程。</p></div></div></section>
+</main>
+<section class="contact" id="contact"><div class="wrap"><div class="eyebrow">04 / SAY HELLO</div><h2>LET'S MAKE<br><span>IT REAL.</span></h2><p>有想法、有建议，或者只是想打个招呼？<br>欢迎以后在这里找到我。</p><a class="mail" href="#about">BACK TO THE TOP ↑</a></div></section>
+<div class="wrap"><footer><span>KEYBOARD® — PERSONAL PLAYGROUND</span><span>MADE WITH CURIOSITY · © 2026</span></footer></div>
+</body></html>
