@@ -6,7 +6,6 @@
 <meta name="theme-color" content="#f5f2ec">
 <title>KEYBOARD® — A Personal Playground</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
 :root{--paper:#f5f2ec;--ink:#191919;--blue:#4e65f5;--pink:#ff6e9e;--lime:#d5ff45;--line:#d9d5cc}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background-color:var(--paper);color:var(--ink);font-family:'Space Grotesk','Noto Sans SC',sans-serif;background-image:linear-gradient(#e9e5dc 1px,transparent 1px),linear-gradient(90deg,#e9e5dc 1px,transparent 1px);background-size:28px 28px}
 a{color:inherit;text-decoration:none}.wrap{width:min(1240px,92%);margin:auto}
@@ -21,7 +20,7 @@ h1 .outline{color:transparent;-webkit-text-stroke:2px var(--ink)}
 .sticker{display:inline-block;background:var(--lime);padding:10px 14px;transform:rotate(-4deg);font:700 12px 'DM Mono',monospace;border:1px solid var(--ink)}
 .visual{height:470px;position:relative}
 .poster{position:absolute;inset:18px 8% 18px 8%;background:#e9a9bd;border:1px solid var(--ink);transform:rotate(3deg);overflow:hidden;box-shadow:10px 10px 0 var(--ink)}
-.poster:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 68% 35%,#f6d9d7 0 13%,transparent 13.5%),linear-gradient(135deg,transparent 0 42%,#e75e83 42% 62%,transparent 62%),repeating-linear-gradient(0deg,transparent 0 17px,#19191918 18px 19px)}
+.poster:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 0 38%,#e75e83 38% 58%,transparent 58%),radial-gradient(ellipse at 78% 78%,#d5ff45 0 17%,transparent 17.5%),repeating-linear-gradient(0deg,transparent 0 17px,#19191918 18px 19px)}
 .poster-word{position:absolute;top:20px;left:18px;font-size:clamp(35px,5vw,65px);line-height:.82;letter-spacing:-.09em;font-weight:700;z-index:1}
 .poster-sub{position:absolute;bottom:18px;left:18px;font:11px 'DM Mono',monospace;z-index:1}
 .orbit{position:absolute;width:116px;height:116px;border:1px solid var(--ink);border-radius:50%;right:-2px;top:0;display:grid;place-items:center;background:var(--lime);font:11px 'DM Mono',monospace;transform:rotate(12deg);z-index:3}
@@ -32,14 +31,15 @@ section{padding:92px 0}.section-head{display:flex;justify-content:space-between;
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}.about-big{font-size:clamp(34px,5vw,62px);line-height:1.05;letter-spacing:-.07em;font-weight:600}.about-big em{font-style:normal;color:var(--blue)}.about-copy{font-size:16px;line-height:2;max-width:500px;align-self:end}
 .cards{display:grid;grid-template-columns:1.05fr .95fr;gap:20px}.card{min-height:310px;border:1px solid var(--ink);padding:22px;position:relative;overflow:hidden;transition:transform .25s}.card:hover{transform:translateY(-7px) rotate(-.5deg)}.card.blue{background:var(--blue);color:white}.card.pink{background:var(--pink)}.card.lime{background:var(--lime)}.card.dark{background:var(--ink);color:var(--paper)}.card .num{font:11px 'DM Mono',monospace}.card h3{font-size:clamp(32px,5vw,58px);line-height:.9;letter-spacing:-.08em;margin:80px 0 10px}.card p{font-size:13px;max-width:250px;line-height:1.6}.arrow{position:absolute;right:22px;top:18px;font-size:28px}
 .note{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.note-art{min-height:290px;background:#d7d0c5;border:1px solid var(--ink);position:relative;overflow:hidden;display:grid;place-items:center}.note-art:before,.note-art:after{content:"";position:absolute;width:220px;height:220px;border:2px solid var(--ink);border-radius:50%}.note-art:after{width:150px;height:150px;background:var(--pink);border:0;mix-blend-mode:multiply}.note-art b{z-index:1;font-size:42px;letter-spacing:-.1em;transform:rotate(-12deg)}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:22px}.gallery figure{margin:0;position:relative;border:1px solid var(--ink);background:#fff;overflow:hidden;box-shadow:7px 7px 0 var(--ink)}.gallery img{display:block;width:100%;height:390px;object-fit:cover}.gallery figure:first-child img{object-position:center 28%}.gallery figure:nth-child(2) img{object-position:center 42%}.gallery figcaption{display:flex;justify-content:space-between;padding:12px 14px;font:11px 'DM Mono',monospace;background:var(--paper)}.gallery figure:first-child{transform:rotate(-1.5deg)}.gallery figure:nth-child(2){transform:rotate(1.5deg);margin-top:42px}
 .contact{background:var(--ink);color:var(--paper);padding:70px 0;margin-top:30px}.contact h2{font-size:clamp(58px,12vw,140px);line-height:.8;letter-spacing:-.1em;margin:30px 0}.contact h2 span{color:var(--lime)}.contact p{font-size:14px;line-height:1.8;color:#c8c4bc}.contact a.mail{display:inline-block;border:1px solid var(--lime);color:var(--lime);padding:12px 18px;font:12px 'DM Mono',monospace;margin-top:18px}
 footer{padding:20px 0;display:flex;justify-content:space-between;font:10px 'DM Mono',monospace}
-@media(max-width:760px){.navlinks{gap:12px}.navlinks a{font-size:9px}.hero-grid,.about-grid,.cards,.note{grid-template-columns:1fr}.hero{padding-top:38px}.visual{height:340px}.poster{inset:12px 10%}.orbit{right:2%}.section{padding:65px 0}.card{min-height:250px}.card h3{margin-top:55px}footer{gap:12px;flex-direction:column}}
+@media(max-width:760px){.navlinks{gap:12px}.navlinks a{font-size:9px}.hero-grid,.about-grid,.cards,.note{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.gallery img{height:340px}.gallery figure:nth-child(2){margin-top:0}.hero{padding-top:38px}.visual{height:340px}.poster{inset:12px 10%}.orbit{right:2%}.section{padding:65px 0}.card{min-height:250px}.card h3{margin-top:55px}footer{gap:12px;flex-direction:column}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<nav><a class="brand" href="#">键盘<span>®</span> / KEYBOARD</a><div class="navlinks"><a href="#about">ABOUT</a><a href="#works">WORKS</a><a href="#notes">NOTES</a><a href="#contact">CONTACT ↗</a></div></nav>
+<nav><a class="brand" href="#">键盘<span>®</span> / KEYBOARD</a><div class="navlinks"><a href="#about">ABOUT</a><a href="#works">WORKS</a><a href="#gallery">GALLERY</a><a href="#notes">NOTES</a><a href="#contact">CONTACT ↗</a></div></nav>
 <header class="hero">
 <div class="eyebrow">INDEPENDENT SPACE · VOL. 001 · 2026</div>
 <div class="hero-grid">
@@ -57,6 +57,7 @@ footer{padding:20px 0;display:flex;justify-content:space-between;font:10px 'DM M
 <article class="card lime"><span class="num">03 / LEARNING</span><span class="arrow">↗</span><h3>LEARNING<br>LOG</h3><p>记录正在学习的技能，以及每一次小小的进步。</p></article>
 <article class="card dark"><span class="num">04 / NEXT</span><span class="arrow">↗</span><h3>TO BE<br>CONTINUED</h3><p>还没发生的事情，也值得期待。</p></article>
 </div></section>
+<section id="gallery"><div class="section-head"><h2>IMAGE ARCHIVE</h2><small>03 / VISUAL DIARY</small></div><div class="gallery"><figure><img src="assets/comic-portrait.webp" alt="漫画风格人物与猫的画面"><figcaption><span>STILL FRAME / 01</span><span>✳ FAVORITE</span></figcaption></figure><figure><img src="assets/comic-action.jpg" alt="漫画风格的动态动作画面"><figcaption><span>MOTION STUDY / 02</span><span>↗ ENERGY</span></figcaption></figure></div></section>
 <section id="notes"><div class="section-head"><h2>OPEN TAB</h2><small>03 / CURRENTLY</small></div><div class="note"><div class="note-art"><b>IN<br>PROCESS.</b></div><div><div class="eyebrow">A NOTE TO MYSELF</div><div class="about-big" style="margin:18px 0">保持好奇，<br><em style="color:var(--pink)">持续动手。</em></div><p class="about-copy">这个角落留给还在路上的想法。以后可以放学习笔记、实验过程、喜欢的唱片与图片，也可以记录一个项目从零到一的过程。</p></div></div></section>
 </main>
 <section class="contact" id="contact"><div class="wrap"><div class="eyebrow">04 / SAY HELLO</div><h2>LET'S MAKE<br><span>IT REAL.</span></h2><p>有想法、有建议，或者只是想打个招呼？<br>欢迎以后在这里找到我。</p><a class="mail" href="#about">BACK TO THE TOP ↑</a></div></section>
